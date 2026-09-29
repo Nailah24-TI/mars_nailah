@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mars_nailah.databinding.ActivityMainBinding
 import com.example.mars_nailah.pertemuan_4.FourthActivity
+import com.example.mars_nailah.pertemuan_5.FifthActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,6 +28,11 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("from", "Rumbai")
             intent.putExtra("age", 25)
 
+            startActivity(intent)
+        }
+        binding.btnToFifth.setOnClickListener {
+
+            val intent = Intent(this, FifthActivity::class.java)
             startActivity(intent)
         }
     }
