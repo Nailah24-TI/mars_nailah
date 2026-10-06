@@ -17,8 +17,6 @@ class AuthActivity : AppCompatActivity() {
         val Password = findViewById<EditText>(R.id.inputPassword)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
 
-        val sharedPref =
-            getSharedPreferences("user_pref", MODE_PRIVATE)
 
         btnLogin.setOnClickListener {
 
@@ -28,16 +26,9 @@ class AuthActivity : AppCompatActivity() {
             if (username.isNotEmpty() && username == password) {
 
                 val editor = sharedPref.edit()
-
                 editor.putBoolean("isLogin", true)
                 editor.putString("username", username)
-
                 editor.apply()
-
-                val intent = Intent(
-                    this,
-                    MainActivity::class.java
-                )
 
                 startActivity(intent)
                 finish()
