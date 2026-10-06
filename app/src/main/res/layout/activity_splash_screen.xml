@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="#673AB7">
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@mipmap/ic_launcher"
+        android:contentDescription="Logo Aplikasi"
+        android:scaleType="centerInside"
+        android:background="@android:color/white"
+        android:padding="18dp"
+        android:elevation="10dp" />
+
+    <!-- Nama Aplikasi -->
+    <TextView
+        android:id="@+id/txtAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="MARS NAILAH"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:letterSpacing="0.06"
+        android:fontFamily="sans" />
+
+    <!-- Garis / aksen -->
+    <TextView
+        android:layout_width="45dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="14dp"
+        android:background="#FFFFFF"
+        android:text="" />
+
+    <!-- Slogan -->
+    <TextView
+        android:id="@+id/txtSlogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Mobile Application and Research System"
+        android:textSize="14sp"
+        android:textColor="#E3F2FD"
+        android:gravity="center"
+        android:fontFamily="sans" />
+
+    <!-- Loading -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="40dp"
+        android:indeterminate="true"
+        android:indeterminateTint="#FFFFFF" />
+
+    <!-- Version -->
+    <TextView
+        android:id="@+id/txtVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="VERSION 1.0"
+        android:textSize="11sp"
+        android:textColor="#B3D9FF"
+        android:letterSpacing="0.15" />
+
+</LinearLayout>
