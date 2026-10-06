@@ -3,6 +3,7 @@ package com.example.mars_nailah
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mars_nailah.databinding.ActivityMainBinding
 import com.example.mars_nailah.pertemuan_4.FourthActivity
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         Log.e("onCreate", "MainActivity dibuat pertama kali")
 
+        // Tombol menuju FourthActivity
         binding.btnToFourth.setOnClickListener {
 
             val intent = Intent(this, FourthActivity::class.java)
@@ -30,10 +32,36 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(intent)
         }
+
+        // Tombol menuju FifthActivity
         binding.btnToFifth.setOnClickListener {
 
             val intent = Intent(this, FifthActivity::class.java)
             startActivity(intent)
+        }
+
+        // Tombol Logout
+        binding.btnLogout.setOnClickListener {
+
+            AlertDialog.Builder(this)
+                .setTitle("Konfirmasi Logout")
+                .setMessage("Apakah Anda yakin ingin logout?")
+                .setNegativeButton("Tidak", null)
+                .setPositiveButton("Ya") { dialog, _ ->
+
+                    val sharedPref =
+                        getSharedPreferences("user_pref", MODE_PRIVATE)
+
+                    val editor = sharedPref.edit()
+                    editor.clear()
+                    editor.apply()
+
+                    dialog.dismiss()
+                    val intent = Intent(this, AuthActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+                .show()
         }
     }
 
