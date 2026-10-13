@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="#E8F5E9"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fragment Dua"
+        android:textColor="#1B5E20"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/isometra_regular"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Ini adalah tampilan fragment kedua."
+        android:textColor="#424242"
+        android:textSize="14sp"
+        android:fontFamily="@font/isometra_regular"/>
+
+</LinearLayout>

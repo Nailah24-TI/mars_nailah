@@ -1,3 +1,4 @@
+
 package com.example.mars_nailah
 
 import android.content.Intent
@@ -17,9 +18,13 @@ class SplashScreenActivity : AppCompatActivity() {
 
         val isLogin = sharedPref.getBoolean("isLogin", false)
 
-        // Jika sudah login, langsung ke MainActivity
+        // Jika sudah login, langsung ke BaseActivity
         if (isLogin) {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(
+                this@SplashScreenActivity,
+                BaseActivity::class.java
+            )
+
             startActivity(intent)
             finish()
             return
@@ -29,7 +34,6 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
 
         lifecycleScope.launch {
-
             delay(2000)
 
             val intent = Intent(

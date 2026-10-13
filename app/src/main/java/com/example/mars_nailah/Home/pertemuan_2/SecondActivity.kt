@@ -1,5 +1,4 @@
-
-package com.example.mars_nailah.pertemuan_2
+package com.example.mars_nailah.Home.pertemuan_2
 
 import android.os.Bundle
 import android.util.Log

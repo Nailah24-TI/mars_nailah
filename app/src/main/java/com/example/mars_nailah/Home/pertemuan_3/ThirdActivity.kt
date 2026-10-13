@@ -1,6 +1,6 @@
+package com.example.mars_nailah.Home.pertemuan_3
 
-package com.example.mars_nailah.pertemuan_3
-
+import android.R
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
@@ -64,7 +64,7 @@ class ThirdActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
 
-            android.R.id.home -> {
+            R.id.home -> {
                 onBackPressedDispatcher.onBackPressed()
                 true
             }

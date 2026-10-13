@@ -1,3 +1,4 @@
+
 package com.example.mars_nailah
 
 import android.content.Intent
@@ -17,11 +18,14 @@ class AuthActivity : AppCompatActivity() {
         val Password = findViewById<EditText>(R.id.inputPassword)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
 
+        val sharedPref = getSharedPreferences(
+            "user_pref",
+            MODE_PRIVATE
+        )
 
         btnLogin.setOnClickListener {
-
-            val username = Username.text.toString()
-            val password = Password.text.toString()
+            val username = Username.text.toString().trim()
+            val password = Password.text.toString().trim()
 
             if (username.isNotEmpty() && username == password) {
 
@@ -30,13 +34,18 @@ class AuthActivity : AppCompatActivity() {
                 editor.putString("username", username)
                 editor.apply()
 
+                // Pindah ke halaman Bottom Navigation
+                val intent = Intent(
+                    this@AuthActivity,
+                    BaseActivity::class.java
+                )
+
                 startActivity(intent)
                 finish()
 
             } else {
-
                 AlertDialog.Builder(this)
-                    .setMessage("Silahkan coba lagi")
+                    .setMessage("Username dan password harus sama!")
                     .setPositiveButton("OK", null)
                     .show()
             }

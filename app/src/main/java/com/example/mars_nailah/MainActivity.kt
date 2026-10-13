@@ -6,8 +6,9 @@ import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mars_nailah.databinding.ActivityMainBinding
-import com.example.mars_nailah.pertemuan_4.FourthActivity
-import com.example.mars_nailah.pertemuan_5.FifthActivity
+import com.example.mars_nailah.Home.pertemuan_4.FourthActivity
+import com.example.mars_nailah.Home.pertemuan_5.FifthActivity
+import com.example.mars_nailah.Home.pertemuan_6.SixthActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,6 +38,11 @@ class MainActivity : AppCompatActivity() {
         binding.btnToFifth.setOnClickListener {
 
             val intent = Intent(this, FifthActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnToSixth.setOnClickListener {
+            val intent = Intent(this, SixthActivity::class.java)
             startActivity(intent)
         }
 

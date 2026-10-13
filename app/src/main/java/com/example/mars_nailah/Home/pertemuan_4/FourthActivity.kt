@@ -1,9 +1,10 @@
-package com.example.mars_nailah.pertemuan_4
+package com.example.mars_nailah.Home.pertemuan_4
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.mars_nailah.BaseActivity
 import com.example.mars_nailah.MainActivity
 import com.example.mars_nailah.databinding.ActivityFourthBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -87,7 +88,7 @@ class FourthActivity : AppCompatActivity() {
 
         binding.btnKembali.setOnClickListener {
 
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, BaseActivity::class.java)
             startActivity(intent)
 
         }
