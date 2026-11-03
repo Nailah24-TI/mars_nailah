@@ -1,60 +1,50 @@
 package com.example.mars_nailah.Message
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.mars_nailah.R
+import androidx.fragment.app.Fragment
+import com.example.mars_nailah.databinding.FragmentMessageBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [MessageFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MessageFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentMessageBinding? = null
+    private val binding get() = _binding!!
+
+    private val messageList = listOf(
+        MessageModel("Alya", 20, "Halo! Apa kabar?", "https://i.pravatar.cc/150?img=1"),
+        MessageModel("Budi", 31, "Sudah makan?", "https://i.pravatar.cc/150?img=2"),
+        MessageModel("Citra", 19, "Jangan lupa tugasnya ya!", "https://i.pravatar.cc/150?img=3"),
+        MessageModel("Dika", 22, "Besok kita rapat jam 9", "https://i.pravatar.cc/150?img=4"),
+        MessageModel("Eka", 27, "Nice job kemarin!", "https://i.pravatar.cc/150?img=5"),
+        MessageModel("Fajar", 26, "Lagi ngapain?", "https://i.pravatar.cc/150?img=6"),
+        MessageModel("Gita", 19, "Boleh minta tolong?", "https://i.pravatar.cc/150?img=7"),
+        MessageModel("Hana", 25, "Lihat email ya", "https://i.pravatar.cc/150?img=8"),
+        MessageModel("Irfan", 22, "Oke noted", "https://i.pravatar.cc/150?img=9"),
+        MessageModel("Joko", 21, "Sampai jumpa besok", "https://i.pravatar.cc/150?img=10")
+    )
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_message, container, false)
+    ): View {
+        _binding = FragmentMessageBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MessageFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MessageFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.toolbar.title = "Message"
+
+        val adapter = MessageAdapter(requireContext(), messageList)
+        binding.listMessageItems.adapter = adapter
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

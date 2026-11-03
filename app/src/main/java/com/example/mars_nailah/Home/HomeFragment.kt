@@ -16,6 +16,7 @@ import com.example.mars_nailah.Home.pertemuan_3.ThirdActivity
 import com.example.mars_nailah.Home.pertemuan_4.FourthActivity
 import com.example.mars_nailah.Home.pertemuan_5.FifthActivity
 import com.example.mars_nailah.Home.pertemuan_6.SixthActivity
+import com.example.mars_nailah.Home.pertemuan_9.NinthActivity
 import com.example.mars_nailah.databinding.FragmentHomeBinding
 
 
@@ -80,6 +81,10 @@ class HomeFragment : Fragment() {
             startActivity(
                 Intent(requireContext(), SixthActivity::class.java)
             )
+        }
+        binding.btnPertemuan9.setOnClickListener {
+            val intent = Intent(requireContext(), NinthActivity::class.java)
+            startActivity(intent)
         }
 
         // Logout
