@@ -91,8 +91,12 @@ class TenthActivity : AppCompatActivity() {
                     badge.isVisible = true
                     badge.number = 5
                 }
-            }
 
+                2 -> {
+                    tab.text = "Produk"
+
+                }
+            }
         }.attach()
     }
 }
