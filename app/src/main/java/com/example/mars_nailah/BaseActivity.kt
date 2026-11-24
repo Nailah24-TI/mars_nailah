@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.example.mars_nailah.Home.HomeFragment
 import com.example.mars_nailah.Message.MessageFragment
 import com.example.mars_nailah.More.MoreFragment
+import com.example.mars_nailah.Note.NoteFragment
 import com.example.mars_nailah.databinding.ActivityBaseBinding
 
 class BaseActivity : AppCompatActivity() {
@@ -61,6 +62,10 @@ class BaseActivity : AppCompatActivity() {
 
                 R.id.more -> {
                     replaceFragment(MoreFragment())
+                    true
+                }
+                R.id.note -> {
+                    replaceFragment(NoteFragment())
                     true
                 }
 
